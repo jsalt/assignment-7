@@ -10,8 +10,7 @@ Copyright 2016 Brant C. Faircloth. All rights reserved.
 
 
 def sequence_eater(sequence, position):
-    max_pos = len(sequence)
-    if position < max_pos:
+    if position < len(sequence):
         print(sequence[position])
         position += 1
         sequence_eater(sequence, position)

@@ -22,16 +22,16 @@ def prompt():
     return args.palindrome
 
 
-def rem_space():
-    '''This function removes spaces from the input phrase'''
+def formatter():
+    '''This function removes non-alphabet characters from the input phrase'''
     starter = prompt()
-    phrase = re.sub(r'\s+', '', starter)
-    return phrase
+    phrase = re.sub(r'\W+', '', starter)
+    return str.lower(phrase)
 
 
 def palidrome_check():
     '''This function evaluates whether a phrase is a palindrome'''
-    phrase = rem_space()
+    phrase = formatter()
     if str(phrase) == (str(phrase)[::-1]):
         print("This phrase is a palindrome")
     else:
@@ -40,7 +40,7 @@ def palidrome_check():
 
 def main():
     prompt()
-    rem_space()
+    formatter()
     palidrome_check()
 
 
