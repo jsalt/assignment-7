@@ -22,9 +22,14 @@ Copyright 2016 Brant C. Faircloth. All rights reserved.
 
 
 def sequence_eater(sequence, position):
-    print(sequence[position])
-    position -= 1
-    sequence_eater(sequence, position)
+    if position == len(sequence):
+        # recursive function was missing a base case
+        return 0
+    else:
+        print(sequence[position])
+        #print (position)
+        position += 1
+        sequence_eater(sequence, position)
 
 
 def main():
